@@ -23,6 +23,12 @@ const usuarioSchema = mongoose.Schema({
     }
 );
 
+
+
+usuarioSchema.methods.comprobarPassword = async function(passwordFormulario){
+    return (usuarioSchema.password === passwordFormulario ) ? true : false;
+};
+
 const Usuario = mongoose.model('Usuario', usuarioSchema);
 
 
